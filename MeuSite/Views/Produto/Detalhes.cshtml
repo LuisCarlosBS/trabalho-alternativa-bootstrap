@@ -1,0 +1,72 @@
+﻿@model MeuSite.Models.Produto
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+<head>
+    <style>
+        dt {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        dd {
+            margin-left: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<div>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd class="mui-form mui--divider-bottom">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd class="mui-form mui--divider-bottom">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd class="mui-form mui--divider-bottom">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorUnitario)
+        </dt>
+
+        <dd class="mui-form mui--divider-bottom">
+            @Html.DisplayFor(model => model.ValorUnitario)
+        </dd>
+
+        <dt>
+            Valor Total
+        </dt>
+
+        <dd class="mui-form mui--divider-bottom">
+            @{ 
+                (@Model.ValorUnitario * @Model.Quantidade).ToString("N2");
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Alterar", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

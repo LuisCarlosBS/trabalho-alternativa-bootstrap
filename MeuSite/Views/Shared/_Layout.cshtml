@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Produtos</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUI Landing Page Example</title>
+    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+    <style>
+        * Body CSS
+        */ 
+
+        html,
+        body { height: 100%; }
+
+        html,
+        body,
+        input,
+        textarea,
+        button {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /**
+         * Header CSS
+         */
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        header ul.mui-list--inline { margin-bottom: 0; }
+
+        header a { color: white; }
+
+        header table { width: 100%; }
+
+
+        /**
+         * Content CSS
+         */
+
+        #content-wrapper {
+            min-height: 100%;
+
+            /* sticky footer */
+            box-sizing: border-box;
+            margin-bottom: 0;
+            padding-bottom: 100px;
+        }
+
+
+        /**
+         * Footer CSS
+         */
+
+        footer {
+            box-sizing: border-box;
+            height: 100px;
+            background-color: #eee;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 35px;
+        }
+    </style>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+    <header class="mui-appbar mui--z1">
+        <div class="mui-container">
+            <table>
+                <tr class="mui--appbar-height">
+                    <td class="mui--text-title">Trabalho Datorre</td>
+                    <td class="mui--text-right">
+                        <ul class="mui-list--inline mui--text-body2">
+                            <li>@Html.ActionLink("Lista", "Index", "Produto")</li>
+                            <li>@Html.ActionLink("Novo", "Novo", "Produto")</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </header>
+<footer>
+        <div class="mui-container mui--text-center">
+            Feito por Luis Carlos utilizando <a href="https://www.muicss.com">MUICSS</a>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
